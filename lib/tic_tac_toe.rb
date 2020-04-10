@@ -59,6 +59,12 @@ class TicTacToe
     won?() || draw?()
   end
 
+  def winner()
+    if winning_combo = won?()
+      board[winning_combo.first]
+    end
+  end
+
 
   def position_taken?(index)
     @board[index]!=nil && @board[index] != " "
