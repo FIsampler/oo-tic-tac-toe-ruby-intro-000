@@ -80,7 +80,6 @@ class TicTacToe
     display_board()
   end
 
-
   def play()
     if over?()==false
       turn()
