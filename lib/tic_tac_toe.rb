@@ -82,7 +82,7 @@ class TicTacToe
 
   def play()
     if over?()==false
-      turn()
+      turn(user_input)
       play()
     else
       if draw?()
