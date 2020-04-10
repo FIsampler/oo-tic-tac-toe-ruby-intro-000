@@ -59,6 +59,17 @@ class TicTacToe
     won?() || draw?()
   end
 
+
+  def position_taken?(index)
+    !(@board[index].nil? || @board[index] == " ")
+  end
+
+
+  def valid_move?(index)
+    index.between?(1,9) && position_taken(index)==false
+  end
+
+
   def turn(index)
     puts "Please enter 1-9:"
     index=input_to_index(user_input.gets)
@@ -69,14 +80,6 @@ class TicTacToe
     display_board()
   end
 
-  def position_taken?(index)
-    !(@board[index].nil? || @board[index] == " ")
-  end
-
-
-  def valid_move?(index)
-    index.between?(1,9) && position_taken(index)==false
-  end
 
   def play()
     if over?()==false
