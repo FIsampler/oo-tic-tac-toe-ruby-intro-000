@@ -42,38 +42,38 @@ class TicTacToe
     input.to_i.between?(1,9) && !position_taken?(index)
   end
 
-  def won?(board)
+  def won?()
     WIN_COMBINATIONS.detect do |combo|
-      board[combo[0]] == board[combo[1]] &&
-      board[combo[1]] == board[combo[2]] &&
-      position_taken?(board, combo[0])
+      @board[combo[0]] == @board[combo[1]] &&
+      @board[combo[1]] == @board[combo[2]] &&
+      position_taken?(combo[0])
     end
   end
 
-  def full?(board)
+  def full?()
     board.all?{|token| token == "X" || token == "O"}
   end
 
-  def draw?(board)
-    won?(board) && full?(board)
+  def draw?()
+    won?() && full?()
   end
 
-  def over?(board)
-    won?(board) || draw?(board)
+  def over?()
+    won?() || draw?()
   end
 
-  def turn(board)
+  def turn()
     puts "Please enter 1-9:"
-    input = gets.strip
-    if !valid_move?(board, input)
-      turn(board)
+    input_to_index
+    if !valid_move?()
+      turn()
     end
-    move(board, input, current_player(board))
-    display_board(board)
+    move(index, current_player(board))
+    display_board()
   end
 
-  def position_taken?(board, index)
-    !(board[index].nil? || board[index] == " ")
+  def position_taken?(index)
+    !(@board[index].nil? || @board[index] == " ")
   end
 
   def play(board)
