@@ -88,6 +88,7 @@ class TicTacToe
 
   def play()
     if over?()==false
+      puts "Please enter 1-9:"
       turn(user_input)
       play()
     else
