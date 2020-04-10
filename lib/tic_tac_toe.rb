@@ -76,14 +76,14 @@ class TicTacToe
     !(@board[index].nil? || @board[index] == " ")
   end
 
-  def play(board)
-    if over?(board)==false
-      turn(board)
-      play(board)
+  def play()
+    if over?()==false
+      turn()
+      play()
     else
-      if draw?(board)
+      if draw?()
         puts "Cat's Game!"
-      elsif won?(board)!=nil
+      elsif won?()!=nil
         puts "Congratulations #{winner(board)}!"
       end
     end
