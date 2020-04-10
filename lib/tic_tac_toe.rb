@@ -92,9 +92,9 @@ class TicTacToe
       turn(user_input)
       play()
     else
-      if draw?()
+      if draw?
         puts "Cat's Game!"
-      elsif won?()!=nil
+      elsif won?!=nil
         puts "Congratulations #{winner(board)}!"
       end
     end
