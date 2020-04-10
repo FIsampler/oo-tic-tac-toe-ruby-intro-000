@@ -38,9 +38,6 @@ class TicTacToe
       @board[index] = current_player
   end
 
-  def valid_move?(index)
-    index.between?(1,9) && position_taken?==false
-  end
 
   def won?()
     WIN_COMBINATIONS.detect do |combo|
@@ -74,6 +71,11 @@ class TicTacToe
 
   def position_taken?(index)
     !(@board[index].nil? || @board[index] == " ")
+  end
+
+
+  def valid_move?(index)
+    index.between?(1,9) && position_taken?==false
   end
 
   def play()
